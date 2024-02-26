@@ -30,7 +30,7 @@ Before you begin, ensure you have the following installed:
 
 4. Bootstrap the AWS environment:
    ```bash
-   cdk bootstrap aws://ACCOUNT-NUMBER/REGION
+   npx cdk bootstrap aws://ACCOUNT-NUMBER/REGION
    ```
 
 ## Deployment
@@ -45,7 +45,7 @@ To deploy the website on AWS:
 2. Deploy the website using AWS CDK, and add the OTP secret as a parameter:
 
    ```bash
-   cdk deploy --parameters otpSecret=123
+   npx cdk deploy --parameters otpSecret=123
    ```
 
 ## Usage
