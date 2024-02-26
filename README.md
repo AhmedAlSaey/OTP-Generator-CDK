@@ -19,7 +19,7 @@ Before you begin, ensure you have the following installed:
 2. Navigate to the project directory:
 
    ```bash
-   cd public-s3-website-cdk
+   cd <cloned_folder>
    ```
 
 3. Install the project dependencies:
