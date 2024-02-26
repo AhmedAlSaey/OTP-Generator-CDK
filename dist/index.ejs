@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2FA Code Retriever</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #code {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        async function fetchCode() {
+            try {
+                const response = await fetch('<%- functionUrl %>');
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('code').innerText = data.current_otp;
+                } else {
+                    console.error('Failed to fetch OTP:', response.statusText);
+                }
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Current 2FA Code:</h1>
+    <div id="code">---</div>
+    <button onclick="fetchCode()">Fetch Code</button>
+</body>
+</html>

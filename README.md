@@ -1,14 +1,59 @@
-# Welcome to your CDK TypeScript project
+# OTP Generator using AWS CDK
 
-This is a blank project for CDK development with TypeScript.
+This project demonstrates how to create a public S3 website using AWS CDK. The infrastructure is defined using TypeScript and AWS CDK, which allows for easy deployment and management of AWS resources.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Prerequisites
 
-## Useful commands
+Before you begin, ensure you have the following installed:
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+- Node.js and npm (Node Package Manager)
+- AWS CDK Toolkit
+
+## Installation
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone <repository_url>
+   ```
+2. Navigate to the project directory:
+
+   ```bash
+   cd public-s3-website-cdk
+   ```
+
+3. Install the project dependencies:
+
+   ```bash
+    npm install
+    ```
+
+4. Bootstrap the AWS environment:
+   ```bash
+   cdk bootstrap aws://ACCOUNT-NUMBER/REGION
+   ```
+
+## Deployment
+To deploy the website on AWS:
+
+1. Configure your AWS credentials using the AWS CLI:
+
+   ```bash
+   aws configure
+    ```
+
+2. Deploy the website using AWS CDK, and add the OTP secret as a parameter:
+
+   ```bash
+   cdk deploy --parameters otpSecret=123
+   ```
+
+## Usage
+Once deployed, the output of the deployment will include the URL of the hosted website. You can access the website using the provided URL.
+
+## Cleanup
+To avoid incurring charges, you can destroy the resources created by the stack:
+
+```bash
+cdk destroy
+```
