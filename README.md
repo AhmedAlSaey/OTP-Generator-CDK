@@ -55,5 +55,5 @@ Once deployed, the output of the deployment will include the URL of the hosted w
 To avoid incurring charges, you can destroy the resources created by the stack:
 
 ```bash
-cdk destroy
+npx cdk destroy
 ```
